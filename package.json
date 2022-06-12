@@ -1,0 +1,27 @@
+{
+  "name": "filemanager-node",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaisEyyy/FileManager-Node.git"
+  },
+  "author": "",
+  "keywords": [  
+    "cli"  
+  ],  
+  "bin": {  
+    "fm": "./src/index.js"  
+  }, 
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaisEyyy/FileManager-Node/issues"
+  },
+  "homepage": "https://github.com/TaisEyyy/FileManager-Node#readme"
+}
