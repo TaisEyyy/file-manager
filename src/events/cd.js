@@ -4,7 +4,6 @@ import fs from 'fs'
 import { getCwd } from '../utils/getCwd.js'
 
 export function cd(...args) {
-  // checkArguments(this.argumentsLength, args)
   const absolutePath = args[1].startsWith('/') && args[1]
 
   const newPath = absolutePath ? absolutePath : path.join(state.path, args[1])

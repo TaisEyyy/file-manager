@@ -4,7 +4,6 @@ import fs from 'fs'
 import { getCwd } from '../utils/getCwd.js'
 
 export function cat(...args) {
-  // checkArguments(this.argumentsLength, args);
   const absolutePath = args[1].startsWith("/") && args[1];
 
   const pathToFile = absolutePath ? absolutePath : path.join(state.path, args[1]);
@@ -15,7 +14,7 @@ export function cat(...args) {
         getCwd()
       })
       .on("error", () => {
-        process.stdout.write("Oops\n");
+        process.stdout.write("Operation failed\n");
         getCwd()
       });
   } else {

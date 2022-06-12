@@ -8,6 +8,9 @@ import { rm } from './rm.js'
 import { rn } from './rn.js'
 import { up } from './up.js'
 import { osImpl as os } from './os.js'
+import { compress } from './compress.js'
+import { decompress } from './decompress.js'
+import { hash } from './hash.js'
 
 export {
   cd,
@@ -19,5 +22,8 @@ export {
   rm,
   rn,
   up,
-  os
+  os,
+  compress,
+  decompress,
+  hash
 }

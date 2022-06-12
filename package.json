@@ -17,7 +17,7 @@
     "cli"  
   ],  
   "bin": {  
-    "fm": "./src/index.js"  
+    "fm": "./src/index.js"
   }, 
   "license": "ISC",
   "bugs": {

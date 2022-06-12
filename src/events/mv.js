@@ -4,7 +4,6 @@ import fs from 'fs'
 import { getCwd } from '../utils/getCwd.js'
 
 export function mv(...args) {
-// checkArguments(this.argumentsLength, args);
 const splitFileName = args[1].split("/");
 const fileName = splitFileName[splitFileName.length- 1]
 const absolutePath = args[1].startsWith("/") && args[1];
@@ -25,7 +24,7 @@ if (fs.existsSync(filePath)) {
       getCwd()
     })
     .on('error', (err) => {
-      process.stdout.write(`Oops\n, ${err}`)
+      process.stdout.write(`Operation failed\n, ${err}`)
     })
 } else {
   process.stdout.write("Wrong path\n");
