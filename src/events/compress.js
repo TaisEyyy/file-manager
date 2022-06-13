@@ -1,0 +1,32 @@
+import fs from 'fs'
+import zlib from 'zlib'
+import { state } from '../utils/state.js'
+import path from 'path'
+import { getCwd } from '../utils/getCwd.js'
+
+export function compress(...args) {
+  const splitFileName = args[1].split("/");
+  const fileName = splitFileName[splitFileName.length - 1]
+  const absolutePath = args[1].startsWith("/") && args[1];
+  const newAbsolutePath = args[2].startsWith("/") && `${args[2]}/${fileName}`;
+
+  const filePath = absolutePath
+    ? absolutePath
+    : path.join(state.path, args[1]);
+  const newFilePath = newAbsolutePath
+    ? newAbsolutePath
+    : path.join(state.path, `${args[2]}`);
+
+  if (fs.existsSync(filePath) && fs.existsSync(newFilePath)) {
+
+    const readStream = fs.createReadStream(filePath);
+    const writeStream = fs.createWriteStream(`${newFilePath}/${fileName}.br`);
+
+    const brotli = zlib.createBrotliCompress();
+
+    readStream.pipe(brotli).pipe(writeStream);
+  } else {
+    process.stdout.write('Wrong path\n')
+    getCwd()
+  }
+}
